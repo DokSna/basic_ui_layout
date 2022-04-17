@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:pixel_perfect/pixel_perfect.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+const uiPath = 'assets/images/ui/';
+
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
