@@ -21,6 +21,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PixelPerfect(
-        assetPath: imagePath + 'DZ_Layout_UI.png', child: const Scaffold());
+        assetPath: imagePath + 'DZ_Layout_UI_412.png',
+        child: const Scaffold());
   }
 }
