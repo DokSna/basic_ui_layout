@@ -110,7 +110,7 @@ packages:
     source: hosted
     version: "1.8.0"
   pixel_perfect:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: pixel_perfect
       url: "https://pub.dartlang.org"

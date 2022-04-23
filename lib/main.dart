@@ -3,9 +3,11 @@ import 'package:pixel_perfect/pixel_perfect.dart';
 
 const imagePath = 'assets/ui/';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
@@ -21,7 +23,6 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PixelPerfect(
-        assetPath: imagePath + 'DZ_Layout_UI_412.png',
-        child: const Scaffold());
+        assetPath: imagePath + 'DZ_Layout_UI_412.png', child: const Scaffold());
   }
 }
