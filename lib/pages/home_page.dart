@@ -32,20 +32,29 @@ Widget _buildBody() {
 
 // TextField
 _searchBox() {
-  return Row(children: const [
-    SizedBox(
-      width: 300,
+  return const SizedBox(
+    height: 40.0,
+    child: Padding(
+      padding: EdgeInsetsDirectional.only(start: 12.0, end: 14.0),
       child: TextField(
-        // obscureText: true,
+        maxLines: 1,
+        style: TextStyle(color: Colors.white),
         decoration: InputDecoration(
-          icon: Icon(Icons.search),
-          iconColor: Colors.white,
-          border: InputBorder.none,
-          // border: OutlineInputBorder(),
-          labelText: 'Enter City Name',
-          labelStyle: TextStyle(color: Colors.white),
+          icon: SizedBox(
+            width: 20,
+            height: 18,
+            child: Icon(
+              Icons.search,
+              color: Colors.white,
+            ),
+          ),
+          border: InputBorder.none, //hintText
+          hintText: 'Enter City Name',
+          hintStyle: TextStyle(color: Colors.white),
+          // labelText: 'Enter City Name',
+          // labelStyle: TextStyle(color: Colors.white),
         ),
       ),
     ),
-  ]);
+  );
 }
