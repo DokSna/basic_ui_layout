@@ -26,12 +26,16 @@ Widget _buildBody() {
       child: Column(
     children: <Widget>[
       _searchBox(),
+      const SizedBox(
+        height: 20,
+      ),
+      _cityDetail(),
     ],
   ));
 }
 
 // TextField
-_searchBox() {
+Widget _searchBox() {
   return const SizedBox(
     height: 40.0,
     child: Padding(
@@ -56,5 +60,35 @@ _searchBox() {
         ),
       ),
     ),
+  );
+}
+
+// City Detail
+Widget _cityDetail() {
+  return Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: Column(
+      children: [
+        _location(),
+        const SizedBox(
+          height: 10,
+        ),
+        _date(),
+      ],
+    ),
+  );
+}
+
+Text _location() {
+  return const Text(
+    'Murmansk Oblast, RU',
+    style: TextStyle(fontSize: 35.5, color: Colors.white),
+  );
+}
+
+Text _date() {
+  return const Text(
+    'Friday, Mar 20, 2020',
+    style: TextStyle(fontSize: 18, color: Colors.white),
   );
 }
