@@ -34,6 +34,10 @@ Widget _buildBody() {
         height: 20,
       ),
       _temperatureDetail(),
+      const SizedBox(
+        height: 50,
+      ),
+      _extraWeatherDetail(),
     ],
   ));
 }
@@ -130,6 +134,51 @@ Widget _temperatureDetail() {
               ),
             ],
           ),
+        ),
+      ],
+    ),
+  );
+}
+
+// Extra Weather Detail
+
+Widget _extraWeatherDetail() {
+  return Container(
+    height: 120.0,
+    width: 330.0,
+    padding: const EdgeInsets.only(left: 2.0),
+    child: ListView(
+      scrollDirection: Axis.horizontal,
+      itemExtent: 110.0,
+      // shrinkWrap: true,
+      children: [
+        _extraWeatherDetailPlate(Icons.ac_unit, '5', 'km/hr'),
+        _extraWeatherDetailPlate(Icons.ac_unit, '3', '%'),
+        _extraWeatherDetailPlate(Icons.ac_unit, '20', '%'),
+      ],
+    ),
+  );
+}
+
+// _extraWeatherDetail - Plate
+Widget _extraWeatherDetailPlate(icon, String volume, String metr) {
+  return SizedBox(
+    height: 50.0,
+    child: Column(
+      children: [
+        Icon(icon, size: 28.0, color: Colors.white),
+        const SizedBox(
+          height: 4.0,
+        ),
+        Text(
+          volume,
+          style: const TextStyle(
+              color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.w300),
+        ),
+        Text(
+          metr,
+          style: const TextStyle(
+              color: Colors.white, fontSize: 12.0, letterSpacing: 0.2),
         ),
       ],
     ),
