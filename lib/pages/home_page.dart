@@ -30,6 +30,10 @@ Widget _buildBody() {
         height: 20,
       ),
       _cityDetail(),
+      const SizedBox(
+        height: 20,
+      ),
+      _temperatureDetail(),
     ],
   ));
 }
@@ -90,5 +94,44 @@ Text _date() {
   return const Text(
     'Friday, Mar 20, 2020',
     style: TextStyle(fontSize: 18, color: Colors.white),
+  );
+}
+
+// Temperature Detail
+Widget _temperatureDetail() {
+  return Container(
+    padding: const EdgeInsetsDirectional.only(start: 22.0, top: 22),
+    width: 260,
+    child: Row(
+      children: [
+        const Icon(
+          Icons.wb_sunny,
+          size: 74,
+          color: Colors.white,
+        ),
+        Container(
+          padding: const EdgeInsetsDirectional.only(start: 20.0, top: 0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: const <Widget>[
+              Text(
+                '14 °F', // ALT+0176 = °
+                style: TextStyle(
+                    fontSize: 54,
+                    fontWeight: FontWeight.w100,
+                    color: Colors.white),
+              ),
+              Text(
+                'LIGHT SNOW',
+                style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w300,
+                    color: Colors.white),
+              ),
+            ],
+          ),
+        ),
+      ],
+    ),
   );
 }
