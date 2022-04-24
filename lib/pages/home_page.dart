@@ -38,6 +38,8 @@ Widget _buildBody() {
         height: 50,
       ),
       _extraWeatherDetail(),
+      _nDayForecaste(),
+      _nDayForecaste_List(),
     ],
   ));
 }
@@ -184,3 +186,55 @@ Widget _extraWeatherDetailPlate(icon, String volume, String metr) {
     ),
   );
 }
+
+// 7-day weather forecaste
+Widget _nDayForecaste() {
+  return Column(children: const [
+    Text(
+      '7-DAY WEATHER FORECAST',
+      style: TextStyle(color: Colors.white, fontSize: 18.0),
+    ),
+    // Row(children: [_nDayForecaste__Card(),]),
+  ]);
+}
+
+// ignore: camel_case_types
+class _nDayForecaste_List extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return _nDayForecaste_List_Cards();
+  }
+}
+
+// ignore: non_constant_identifier_names
+Widget _nDayForecaste_List_Cards() {
+  final List<String> items = List<String>.generate(10000, (i) => 'Item $i');
+  return SizedBox(
+    width: 360,
+    height: 120,
+    child: ListView.builder(
+      scrollDirection: Axis.horizontal,
+      itemExtent: 150,
+      itemCount: items.length,
+      itemBuilder: (context, index) {
+        return Card(
+          child: ListTile(
+            title: Text(items[index]),
+            leading: const Icon(Icons.insert_photo, color: Colors.red),
+            trailing: const Icon(Icons.keyboard_arrow_right),
+          ),
+        );
+      },
+    ),
+  );
+}
+
+// ListView _listCards() {
+//   return ListView(
+//     children: const [
+//       Text('data'),
+//       Text('data'),
+//       Text('data'),
+//     ],
+//   );
+// }
