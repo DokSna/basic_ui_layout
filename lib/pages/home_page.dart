@@ -39,7 +39,6 @@ Widget _buildBody() {
       ),
       _extraWeatherDetail(),
       _nDayForecaste(),
-      _nDayForecaste_List(),
     ],
   ));
 }
@@ -189,11 +188,12 @@ Widget _extraWeatherDetailPlate(icon, String volume, String metr) {
 
 // 7-day weather forecaste
 Widget _nDayForecaste() {
-  return Column(children: const [
-    Text(
+  return Column(children: [
+    const Text(
       '7-DAY WEATHER FORECAST',
       style: TextStyle(color: Colors.white, fontSize: 18.0),
     ),
+    _nDayForecaste_List(),
     // Row(children: [_nDayForecaste__Card(),]),
   ]);
 }
@@ -208,33 +208,46 @@ class _nDayForecaste_List extends StatelessWidget {
 
 // ignore: non_constant_identifier_names
 Widget _nDayForecaste_List_Cards() {
-  final List<String> items = List<String>.generate(10000, (i) => 'Item $i');
-  return SizedBox(
+  final List<Widget> items = [];
+  return Container(
+    color: Colors.transparent,
     width: 360,
     height: 120,
     child: ListView.builder(
       scrollDirection: Axis.horizontal,
       itemExtent: 150,
-      itemCount: items.length,
+      itemCount: 7,
       itemBuilder: (context, index) {
-        return Card(
-          child: ListTile(
-            title: Text(items[index]),
-            leading: const Icon(Icons.insert_photo, color: Colors.red),
-            trailing: const Icon(Icons.keyboard_arrow_right),
+        return Container(
+          margin: const EdgeInsets.only(top: 16, right: 6),
+
+          decoration: const BoxDecoration(
+            color: Color.fromARGB(60, 255, 255, 255),
+          ),
+          width: 50, //?
+          height: 20, //?,
+          child: Column(
+            children: [
+              const Text(
+                'Friday',
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+              Row(
+                children: const [
+                  Text(
+                    '6 °F',
+                    style: TextStyle(color: Colors.white, fontSize: 36),
+                  ),
+                  Icon(
+                    Icons.wb_sunny,
+                    color: Colors.white,
+                  ),
+                ],
+              ),
+            ],
           ),
         );
       },
     ),
   );
 }
-
-// ListView _listCards() {
-//   return ListView(
-//     children: const [
-//       Text('data'),
-//       Text('data'),
-//       Text('data'),
-//     ],
-//   );
-// }
