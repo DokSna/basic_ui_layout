@@ -212,12 +212,31 @@ class _nDayForecaste_List extends StatelessWidget {
 
 // ignore: non_constant_identifier_names
 Widget _nDayForecaste_List_Cards() {
-  final List<Widget> items = [];
+  final List<dynamic> items = [
+    ['Friday', 6, Icons.wb_sunny],
+    ['Saturday', 5, Icons.wb_cloudy],
+    ['Sunday', 22, Icons.wb_cloudy],
+    ['Monday', 18, Icons.wb_sunny],
+    ['Tuesday', 15, Icons.wb_sunny],
+    ['Wednesday', 19, Icons.wb_cloudy],
+    ['Thursday', 21, Icons.wb_sunny],
+  ];
+  // late dynamic koko;
+  // final List<dynamic> itemsday = [
+  //   'Friday',
+  //   'Saturday',
+  //   'Sunday',
+  //   'Monday',
+  //   'Tuesday',
+  //   'Wednesday',
+  //   'Thursday'
+  // ];
   return Container(
     color: Colors.transparent,
     width: 380,
     height: 124,
     child: ListView.builder(
+      // koko = ${items[index][2]};
       scrollDirection: Axis.horizontal,
       itemExtent: 160,
       itemCount: 7,
@@ -228,13 +247,15 @@ Widget _nDayForecaste_List_Cards() {
           decoration: const BoxDecoration(
             color: Color.fromARGB(60, 255, 255, 255),
           ),
-          width: 50, //?
-          height: 20, //?,
+          // width: 50, //?
+          // height: 20, //?,
+
           child: Column(
             children: [
-              const Text(
-                'Friday',
-                style: TextStyle(
+              Text(
+                // '${itemsday[index]}',
+                '${items[index][0]}',
+                style: const TextStyle(
                     color: Colors.white,
                     fontSize: 25,
                     fontWeight: FontWeight.w300),
@@ -242,18 +263,18 @@ Widget _nDayForecaste_List_Cards() {
               Padding(
                 padding: const EdgeInsets.only(top: 14.0, left: 22),
                 child: Row(
-                  children: const [
+                  children: [
                     Text(
-                      '6 °F',
-                      style: TextStyle(
+                      '${items[index][1]} °F',
+                      style: const TextStyle(
                           color: Colors.white,
                           fontSize: 30,
                           fontWeight: FontWeight.w300),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(left: 8),
+                      padding: const EdgeInsets.only(left: 8),
                       child: Icon(
-                        Icons.wb_sunny,
+                        items[index][2],
                         color: Colors.white,
                         size: 40,
                       ),
