@@ -262,24 +262,24 @@ Widget _nDayForecaste_List_Cards() {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 14.0, left: 22),
-                child: Row(
-                  children: [
-                    Text(
-                      '${items[index][1]} °F',
-                      style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 30,
-                          fontWeight: FontWeight.w300),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 8),
-                      child: Icon(
+                child: Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(
+                        '${items[index][1]} °F',
+                        style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 30,
+                            fontWeight: FontWeight.w300),
+                      ),
+                      Icon(
                         items[index][2],
                         color: Colors.white,
                         size: 40,
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ],
