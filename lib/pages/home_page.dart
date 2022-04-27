@@ -91,7 +91,11 @@ Widget _cityDetail() {
 Text _location() {
   return const Text(
     'Murmansk Oblast, RU',
-    style: TextStyle(fontSize: 35.5, color: Colors.white),
+    style: TextStyle(
+        fontSize: 35.5,
+        color: Colors.white,
+        fontWeight: FontWeight.w300,
+        letterSpacing: 0.25),
   );
 }
 
@@ -211,16 +215,16 @@ Widget _nDayForecaste_List_Cards() {
   final List<Widget> items = [];
   return Container(
     color: Colors.transparent,
-    width: 360,
-    height: 120,
+    width: 380,
+    height: 124,
     child: ListView.builder(
       scrollDirection: Axis.horizontal,
-      itemExtent: 150,
+      itemExtent: 160,
       itemCount: 7,
       itemBuilder: (context, index) {
         return Container(
           margin: const EdgeInsets.only(top: 16, right: 6),
-
+          padding: const EdgeInsets.all(8),
           decoration: const BoxDecoration(
             color: Color.fromARGB(60, 255, 255, 255),
           ),
@@ -230,19 +234,32 @@ Widget _nDayForecaste_List_Cards() {
             children: [
               const Text(
                 'Friday',
-                style: TextStyle(color: Colors.white, fontSize: 20),
-              ),
-              Row(
-                children: const [
-                  Text(
-                    '6 °F',
-                    style: TextStyle(color: Colors.white, fontSize: 36),
-                  ),
-                  Icon(
-                    Icons.wb_sunny,
+                style: TextStyle(
                     color: Colors.white,
-                  ),
-                ],
+                    fontSize: 25,
+                    fontWeight: FontWeight.w300),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 14.0, left: 22),
+                child: Row(
+                  children: const [
+                    Text(
+                      '6 °F',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 30,
+                          fontWeight: FontWeight.w300),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 8),
+                      child: Icon(
+                        Icons.wb_sunny,
+                        color: Colors.white,
+                        size: 40,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
