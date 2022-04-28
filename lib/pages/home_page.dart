@@ -61,11 +61,9 @@ Widget _searchBox() {
               color: Colors.white,
             ),
           ),
-          border: InputBorder.none, //hintText
+          border: InputBorder.none,
           hintText: 'Enter City Name',
           hintStyle: TextStyle(color: Colors.white),
-          // labelText: 'Enter City Name',
-          // labelStyle: TextStyle(color: Colors.white),
         ),
       ),
     ),
@@ -192,14 +190,16 @@ Widget _extraWeatherDetailPlate(icon, String volume, String metr) {
 
 // 7-day weather forecaste
 Widget _nDayForecaste() {
-  return Column(children: [
-    const Text(
-      '7-DAY WEATHER FORECAST',
-      style: TextStyle(color: Colors.white, fontSize: 18.0),
-    ),
-    _nDayForecaste_List(),
-    // Row(children: [_nDayForecaste__Card(),]),
-  ]);
+  return Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+    child: Column(children: [
+      const Text(
+        '7-DAY WEATHER FORECAST',
+        style: TextStyle(color: Colors.white, fontSize: 18.0),
+      ),
+      _nDayForecaste_List(),
+    ]),
+  );
 }
 
 // ignore: camel_case_types
@@ -214,72 +214,61 @@ class _nDayForecaste_List extends StatelessWidget {
 Widget _nDayForecaste_List_Cards() {
   final List<dynamic> items = [
     ['Friday', 6, Icons.wb_sunny],
-    ['Saturday', 5, Icons.wb_cloudy],
-    ['Sunday', 22, Icons.wb_cloudy],
-    ['Monday', 18, Icons.wb_sunny],
+    ['Saturday', 5, Icons.wb_sunny],
+    ['Sunday', 22, Icons.wb_sunny],
+    ['Monday', 18, Icons.wb_cloudy],
     ['Tuesday', 15, Icons.wb_sunny],
     ['Wednesday', 19, Icons.wb_cloudy],
     ['Thursday', 21, Icons.wb_sunny],
   ];
-  // late dynamic koko;
-  // final List<dynamic> itemsday = [
-  //   'Friday',
-  //   'Saturday',
-  //   'Sunday',
-  //   'Monday',
-  //   'Tuesday',
-  //   'Wednesday',
-  //   'Thursday'
-  // ];
   return Container(
+    margin: const EdgeInsets.only(top: 16),
     color: Colors.transparent,
-    width: 380,
-    height: 124,
+    height: 110,
     child: ListView.builder(
-      // koko = ${items[index][2]};
       scrollDirection: Axis.horizontal,
       itemExtent: 160,
       itemCount: 7,
       itemBuilder: (context, index) {
         return Container(
-          margin: const EdgeInsets.only(top: 16, right: 6),
-          padding: const EdgeInsets.all(8),
+          padding: const EdgeInsets.only(top: 8),
+          margin: const EdgeInsets.only(right: 8),
           decoration: const BoxDecoration(
-            color: Color.fromARGB(60, 255, 255, 255),
+            color: Color.fromARGB(55, 255, 255, 255),
           ),
-          // width: 50, //?
-          // height: 20, //?,
-
           child: Column(
             children: [
               Text(
-                // '${itemsday[index]}',
                 '${items[index][0]}',
                 style: const TextStyle(
                     color: Colors.white,
                     fontSize: 25,
                     fontWeight: FontWeight.w300),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 14.0, left: 22),
-                child: Center(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Text(
-                        '${items[index][1]} °F',
-                        style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 30,
-                            fontWeight: FontWeight.w300),
+              Container(
+                padding: const EdgeInsets.only(top: 14, right: 21),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.only(left: 21),
+                      width: 90,
+                      child: Center(
+                        child: Text(
+                          '${items[index][1]} °F',
+                          style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 30,
+                              fontWeight: FontWeight.w300),
+                        ),
                       ),
-                      Icon(
-                        items[index][2],
-                        color: Colors.white,
-                        size: 40,
-                      ),
-                    ],
-                  ),
+                    ),
+                    Icon(
+                      items[index][2],
+                      color: Colors.white,
+                      size: 40,
+                    ),
+                  ],
                 ),
               ),
             ],
