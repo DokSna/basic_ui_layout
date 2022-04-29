@@ -225,14 +225,13 @@ Widget _nDayForecaste_List_Cards() {
     margin: const EdgeInsets.only(top: 16),
     color: Colors.transparent,
     height: 110,
-    child: ListView.builder(
+    child: ListView.separated(
       scrollDirection: Axis.horizontal,
-      itemExtent: 160,
       itemCount: 7,
       itemBuilder: (context, index) {
         return Container(
+          width: 152,
           padding: const EdgeInsets.only(top: 8),
-          margin: const EdgeInsets.only(right: 8),
           decoration: const BoxDecoration(
             color: Color.fromARGB(55, 255, 255, 255),
           ),
@@ -274,6 +273,9 @@ Widget _nDayForecaste_List_Cards() {
             ],
           ),
         );
+      },
+      separatorBuilder: (BuildContext context, int index) {
+        return const SizedBox(width: 8);
       },
     ),
   );
