@@ -1,3 +1,4 @@
+/*
 import 'package:flutter/material.dart';
 import 'package:pixel_perfect/pixel_perfect.dart';
 import 'home_page.dart';
@@ -14,3 +15,4 @@ class ProfileScreen extends StatelessWidget {
         child: const SafeArea(child: WeatherForecast()));
   }
 }
+*/
